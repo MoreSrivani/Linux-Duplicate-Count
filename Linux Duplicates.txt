@@ -1,0 +1,21 @@
+root@tryit-native:~# cat "Data.txt"                                                                                                                 
+Maths                                                                                                                                               
+Science                                                                                                                                             
+Social                                                                                                                                              
+Maths                                                                                                                                               
+Science                                                                                                                                             
+Maths                                                                                                                                               
+Social                                                                                                                                              
+Maths                                                                                                                                               
+root@tryit-native:~# sort "Data.txt" | uniq -c | grep -v '^*1' > Result.txt                                                                         
+root@tryit-native:~# cat Result.txt                                                                                                                 
+      4 Maths                                                                                                                                       
+      2 Science                                                                                                                                     
+      2 Social   
+
+
+sort is used sort the data in an order                                                                                                                                  
+Uniq is used to filter out the repeated or duplicate lines and "c" is used to filter duplicate characters instead of duplicate lines in the data.
+grep is used to search data in version.
+^  It is used Beginning of line.
+*  Represents zero or more characters. 
