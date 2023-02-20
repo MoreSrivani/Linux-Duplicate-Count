@@ -1,0 +1,37 @@
+$cat > "Demo1.txt"
+1,english,hyd
+2,maths,bnglr
+3,science,chennai
+1,english,hyd
+4,maths,klkt
+3,social,chennai
+4,maths,klkt
+6,telugu,mb
+8,hindi,up
+6,telugu,mp
+
+$ awk -F, '{print $1,$3,$2}' OFS=, "Demo1.txt" | sort -u >"Demo2.txt"
+$ cat "Demo2.txt"
+1,hyd,english
+2,bnglr,maths
+3,chennai,science
+3,chennai,social
+4,klkt,maths
+6,mb,telugu
+6,mp,telugu
+8,up,hindi
+
+$ echo "Total no of lines before: $(wc -l < Demo1.txt)">>Demo2.txt
+$ echo "Total no of lines after: $(wc -l < Demo1.txt)">>Demo2.txt 
+
+$cat "Demo2.txt"
+1,hyd,english
+2,bnglr,maths
+3,chennai,science
+3,chennai,social
+4,klkt,maths
+6,mb,telugu
+6,mp,telugu
+8,up,hindi
+Total no of lines before:10
+Total no of lines after:8
